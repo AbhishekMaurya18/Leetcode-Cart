@@ -2,14 +2,13 @@ class Solution {
 public:
     bool wordBreak(string s, vector<string>& wordDict) {
         int n=s.size();
-        int dp[n+1];
-        memset(dp,0,sizeof(dp));
+        unordered_set<string> m;
         
-        unordered_set<string> ws;
-        
-        for(string& c: wordDict){
-            ws.insert(c);
+        for(auto& c: wordDict){
+            m.insert(c);
         }
+        int dp[n+1];
+        memset(dp,0,sizeof dp);
         
         dp[n]=1;
         
@@ -17,7 +16,7 @@ public:
             string word="";
             for(int j=i;j<n;j++){
                 word.push_back(s[j]);
-                if(ws.find(word)!=ws.end()){
+                if(m.find(word)!=m.end()){
                     if(dp[j+1]){
                         dp[i]=1;
                         break;
