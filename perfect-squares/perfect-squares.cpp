@@ -12,10 +12,7 @@ public:
         
         dp[0]=0;
         for(int i=1;i<=n;i++){  //i means target at that point
-            for(int j=1;j<=sqrt(n);j++){
-                if(i<j*j){
-                    break;
-                }
+            for(int j=1; j*j<=i;j++){
                 dp[i]=min(dp[i],dp[i-j*j]+1);
             }
         }
