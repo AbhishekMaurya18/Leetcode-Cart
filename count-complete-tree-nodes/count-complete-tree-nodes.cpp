@@ -34,6 +34,7 @@ public:
         }
     }
     
+    //count depth of subtree O(log n)
     int getcount(TreeNode* root){
         if(!root){
             return 0;
