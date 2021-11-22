@@ -18,7 +18,7 @@ public:
         if(root->val==key){
             if(!root->right){
                 TreeNode* left=root->left;
-                delete root;
+                //delete root;
                 return left;
             }
             else{
